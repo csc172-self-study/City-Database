@@ -56,8 +56,6 @@ int main() {
 		cities[i] = City(name, pos);
 	}
 
-	cities[5].print();
-
 	////////////
 	// Insert //
 	////////////
