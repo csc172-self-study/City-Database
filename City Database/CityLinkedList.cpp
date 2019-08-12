@@ -25,9 +25,11 @@ void CityLinkedList::insertCity(City inCity) {
 
 int CityLinkedList::searchByName(string key) {
 
+	City city;
 	for (int i = 0; i < length(); ++i) {
 		moveToPos(i);
-		if (getVal().name == key) {
+		city = getVal();
+		if (city.getName() == key) {
 			return i;
 		}
 	}
@@ -44,9 +46,11 @@ void CityLinkedList::deleteByName(string key) {
 
 int CityLinkedList::searchByCoordinate(int* key) {
 
+	City city;
 	for (int i = 0; i < length(); ++i) {
 		moveToPos(i);
-		if (getVal().pos[0] == key[0] && getVal().pos[1] == key[1]) {
+		city = getVal();
+		if (city.getX() == key[0] && city.getY() == key[1]) {
 			return i;
 		}
 	}
@@ -67,8 +71,8 @@ void CityLinkedList::printWithinDistance(int* orig, double dist) {
 		moveToPos(i);
 		City city = getVal();
 
-		int xdist = city.pos[0]-orig[0];
-		int ydist = city.pos[1]-orig[1];
+		int xdist = city.getX()-orig[0];
+		int ydist = city.getY()-orig[1];
 
 		if (sqrt(xdist*xdist + ydist*ydist) <= dist) {
 			if (firstPrint) {

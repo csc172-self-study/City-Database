@@ -14,6 +14,7 @@
 #include <iostream>
 using std::cout; using std::to_string;
 
+// Raise int to int power
 int myPow(int x, int p)
 {
 	if (p == 0) return 1;
@@ -26,7 +27,7 @@ int myPow(int x, int p)
 
 int main() {
 
-	// Init variables
+	// Init variables and random distributions
 	CityLinkedList LLdatabase(100);
 	CityArrayList ALdatabase(100);
 

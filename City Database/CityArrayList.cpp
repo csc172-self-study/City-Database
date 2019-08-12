@@ -27,7 +27,7 @@ int CityArrayList::searchByName(string key) {
 
 	for (int i = 0; i < length(); ++i) {
 		moveToPos(i);
-		if (getVal().name == key) {
+		if (getVal().getName() == key) {
 			return i;
 		}
 	}
@@ -45,7 +45,7 @@ int CityArrayList::searchByCoordinate(int key[]) {
 
 	for (int i = 0; i < length(); ++i) {
 		moveToPos(i);
-		if (getVal().pos[0] == key[0] && getVal().pos[1] == key[1]) {
+		if (getVal().getX() == key[0] && getVal().getY() == key[1]) {
 			return i;
 		}
 	}
@@ -66,8 +66,8 @@ void CityArrayList::printWithinDistance(int orig[], double dist) {
 		moveToPos(i);
 		City city = getVal();
 
-		int xdist = city.pos[0]-orig[0];
-		int ydist = city.pos[1]-orig[1];
+		int xdist = city.getX()-orig[0];
+		int ydist = city.getY()-orig[1];
 
 		if (xdist*xdist + ydist*ydist <= dist*dist) {
 			if (firstPrint) {
